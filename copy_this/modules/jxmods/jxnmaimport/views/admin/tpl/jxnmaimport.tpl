@@ -1,6 +1,5 @@
-[{*debug*}]
+
 [{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign box=" "}]
-<link href="[{$oViewConf->getModuleUrl('jxnmaimport','out/admin/src/jxnmaimport.css')}]" type="text/css" rel="stylesheet">
 
 <script type="text/javascript">
   if(top)
@@ -47,7 +46,7 @@ function editThis( sID, sClass )
 
     var oTransfer = document.getElementById("transfer");
     oTransfer.oxid.value=sID;
-    oTransfer.cl.value=sClass; /*'article';*/
+    oTransfer.cl.value=sClass;
     oTransfer.submit();
 }
 
@@ -144,27 +143,27 @@ function changeColor(checkValue,rowNumber)
                     <div class="listitemfloating">&nbsp</a></div>
                 </td>
                 <td class="[{$listclass}]">
-                    <a href="Javascript:editThis('[{$Article.oxid}]','admin_order');" title="[{ oxmultilang ident="JXSALES_GOTOORDER" }]" id="jxArtNo[{$i}]">
+                    <a href="Javascript:editThis('[{$Article.oxid}]','article');" id="jxArtNo[{$i}]">
                        [{$Article.oxartnum}]
                     </a>
                 </td>
                 <td class="[{$listclass}]">
-                    <a href="Javascript:editThis('[{$Article.oxid}]','admin_user');" title="[{ oxmultilang ident="JXSALES_GOTOUSER" }]" id="jxMPN[{$i}]">
+                    <a href="Javascript:editThis('[{$Article.oxid}]','article');" id="jxMPN[{$i}]">
                        [{$Article.oxmpn}]
                     </a>
                 </td>
                 <td class="[{$listclass}]">
-                    <a href="Javascript:editThis('[{$Article.oxid}]','admin_user');" title="[{ oxmultilang ident="JXSALES_GOTOUSER" }]" id="jxTitle[{$i}]">
+                    <a href="Javascript:editThis('[{$Article.oxid}]','article');" id="jxTitle[{$i}]">
                        [{$Article.oxtitle}]
                     </a>
                 </td>
                 <td class="[{$listclass}]">
-                    <a href="Javascript:editThis('[{$User.oxid}]','admin_user');" title="[{ oxmultilang ident="JXSALES_GOTOUSER" }]" id="jxEAN[{$i}]">
+                    <a href="Javascript:editThis('[{$Article.oxid}]','article');" id="jxEAN[{$i}]">
                        [{$Article.oxean}]
                     </a>
                 </td>
                 <td class="[{$listclass}]">
-                    <a href="Javascript:editThis('[{$User.oxid}]','admin_user');" title="[{ oxmultilang ident="JXSALES_GOTOUSER" }]" id="jxStock[{$i}]">
+                    <a href="Javascript:editThis('[{$Article.oxid}]','article');" id="jxStock[{$i}]">
                         [{if bJxInvarticles }]
                             [{$Article.jxinvstock}]&nbsp;&nbsp;([{$Article.oxstock}])
                         [{else}]
@@ -173,7 +172,7 @@ function changeColor(checkValue,rowNumber)
                     </a>
                 </td>
                 <td class="[{$listclass}]">
-                    <a href="Javascript:editThis('[{$User.oxid}]','admin_user');" title="[{ oxmultilang ident="JXSALES_GOTOUSER" }]" name="jxStatus[{$i}]" id="jxStatus[{$i}]">
+                    <a href="Javascript:editThis('[{$Article.oxid}]','article');" id="jxStatus[{$i}]">
                        [{if $Article.oxstockflag == 1}]
                             [{ oxmultilang ident="GENERAL_STANDARD" }]
                        [{elseif $Article.oxstockflag == 4}]
@@ -186,7 +185,7 @@ function changeColor(checkValue,rowNumber)
                     </a>
                 </td>
                 <td class="[{$listclass}]">
-                    <a href="Javascript:editThis('[{$User.oxid}]','admin_user');" title="[{ oxmultilang ident="JXSALES_GOTOUSER" }]" id="jxPrice[{$i}]">
+                    <a href="Javascript:editThis('[{$Article.oxid}]','article');" id="jxPrice[{$i}]">
                        [{$Article.oxprice|string_format:"%.2f"}]</a></td>
                 <td class="[{$listclass}]" align="center">
                     <input type="checkbox" name="jxnmaimport_oxid[]" 
